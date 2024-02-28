@@ -22,9 +22,11 @@ public class PlayerController : MonoBehaviour
 
         float y = Input.GetAxis("Vertical");
         movement += Vector3.forward * y;
+
         movement = movement.normalized;
         movement *= Time.deltaTime;
         movement *= moveSpeed;
+
         transform.position += movement;
     }
 }
