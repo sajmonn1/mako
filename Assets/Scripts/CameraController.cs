@@ -1,20 +1,24 @@
-ï»¿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    // pozycja gracza
     Transform player;
+    // offset kamery
     Vector3 cameraOffset;
+    //prêdkoœæ przesuwania kamery - nie nadajemy wartoœci - zrobi to smoothDamp
     Vector3 cameraSpeed;
+    //czas wyg³adzania ruchu kamery
     float smoothTime = 0.3f;
 
     // Start is called before the first frame update
     void Start()
     {
-        // znajdz gracza i podï¿½ï¿½cz jego pozycjï¿½ do zmiennej transform
+        // znajdz gracza i pod³¹cz jego pozycjê do zmiennej transform
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        // pobierz domyï¿½lny offset kamery
+        // pobierz domyœlny offset kamery
         cameraOffset = transform.position - player.position;
     }
 
@@ -27,13 +31,13 @@ public class CameraController : MonoBehaviour
 
 
         //bardziej kulturalnie - lerp
-        //policz pozycje docelowï¿½
+        //policz pozycje docelow¹
         Vector3 targetPosition = player.position + cameraOffset;
-
-        //uï¿½yj interpolacji liniowej
+        
+        //u¿yj interpolacji liniowej
         //transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime);
-
-        //uï¿½yj smooothdamp
+        
+        //u¿yj smooothdamp
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref cameraSpeed, smoothTime);
     }
 }
