@@ -13,7 +13,7 @@ public class CCTVCameraController : MonoBehaviour
 
     //czy kamera krêci siê w prawo
     bool turningRight = !true;
-
+    
     //obiektyw kamery
     Transform cameraLens;
 
