@@ -148,8 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62de7ca17b9ce4c43a9b33d045951cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 20
-  turnAngle: 90
 --- !u!4 &107930986
 Transform:
   m_ObjectHideFlags: 0
@@ -258,7 +256,7 @@ GameObject:
   - component: {fileID: 115370298}
   - component: {fileID: 115370297}
   m_Layer: 5
-  m_Name: GameOverText
+  m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -663,8 +661,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 115370296}
   - {fileID: 1481539164}
+  - {fileID: 115370296}
   m_Father: {fileID: 430678235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1490,7 +1488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLeft: 90
   timeCounter: {fileID: 525110836}
-  gameOverOverlay: {fileID: 278336176}
+  gameOverOverlay: {fileID: 0}
 --- !u!4 &1103075894
 Transform:
   m_ObjectHideFlags: 0
@@ -1826,7 +1824,7 @@ GameObject:
   - component: {fileID: 1481539166}
   - component: {fileID: 1481539165}
   m_Layer: 5
-  m_Name: ReasonText
+  m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
