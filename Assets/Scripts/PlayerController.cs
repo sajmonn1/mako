@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         //zczytaj klawiaturê w osi poziomej:
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         //wyœwietl w konsoli stan klawiatury
-        Debug.Log(horizontalInput);
+        //Debug.Log(horizontalInput);
 
         //wylicz przesuniêcie w osi x
         Vector3 movement = Vector3.right * horizontalInput;
@@ -71,5 +71,24 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
         
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        //ta funkcja wykryje za ka¿dym razem kiedy gracz wejdz w colider który jest triggerem
+        //mo¿e to byæ kamera ale mo¿e to te¿ byc koniec poziomu
+        
+        if(other.CompareTag("LevelEnd"))
+        {
+            //stanelismy a miejscu gdzie jest koniec poziomu - wygraliœmy
+
+            //find->nazwaobiektu->nazwaskryptu->nazwa funkcji
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().OnWin();
+        }
+        if(other.CompareTag("CameraView"))
+        {
+            //kamera nas zobaczy³a - przegraliœmy
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().OnLose();
+
+        }
     }
 }
